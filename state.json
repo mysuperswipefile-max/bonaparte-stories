@@ -1,7 +1,17 @@
 {
   "current_series": "arcole",
-  "next_part": 1,
-  "posted": [],
+  "next_part": 2,
+  "posted": [
+    {
+      "date": "2026-11-14",
+      "series": "arcole",
+      "part": 1,
+      "buffer_posts": {
+        "youtube": "6af8b69b76c23bf1c7374c35",
+        "tiktok": "6af8b69c76c23bf1c7374c62"
+      }
+    }
+  ],
   "upcoming_series": [
     "Rivoli, January 1797 - the battle that finished the Italian campaign",
     "The Pyramids, July 1798 - Egypt",
