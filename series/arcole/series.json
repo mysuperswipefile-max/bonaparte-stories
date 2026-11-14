@@ -18,7 +18,7 @@
   "1": [
    [
     "aic_1:.45,.12,.45,.18,1.6,1.3",
-    "aic_e:.5,.2,.5,.15,1.0,1.25"
+    "medal"
    ],
    [
     "monteleg",
@@ -77,7 +77,18 @@
    "aic_d",
    "arcole_r",
    "aic_c",
-   "mantua_view"
+   "mantua_view",
+   "aic_f",
+   "augereau_r",
+   "augereau_flag",
+   "medal",
+   "lodi_r",
+   "bassano_dead",
+   "wounded",
+   "hospital",
+   "aic_a",
+   "aic_e",
+   "massena"
   ],
   "3": [
    "arcole_r",
@@ -96,7 +107,18 @@
    "aic_d",
    "swamp4",
    "serurier",
-   "swamp1"
+   "swamp1",
+   "aic_f",
+   "augereau_r",
+   "augereau_flag",
+   "alex_heroes",
+   "mantua_view",
+   "medal",
+   "swamp2",
+   "aic_b",
+   "aic_c",
+   "aic_e",
+   "massena"
   ],
   "4": [
    "aic_1",
@@ -113,7 +135,21 @@
    "arcole_r",
    "aic_b",
    "serurier",
-   "montenotte"
+   "montenotte",
+   "aic_f",
+   "augereau_r",
+   "mantua_view",
+   "medal",
+   "lodi_r2",
+   "monteleg",
+   "swamp1",
+   "swamp2",
+   "swamp4",
+   "hospital",
+   "horse_mtn",
+   "aic_e",
+   "massena",
+   "rep_refuse"
   ],
   "5": [
    "aic_b",
@@ -130,7 +166,21 @@
    "vernet_det",
    "hus_aus",
    "swamp2",
-   "serurier"
+   "serurier",
+   "aic_f",
+   "augereau_r",
+   "augereau_flag",
+   "alex_heroes",
+   "medal",
+   "lodi_r",
+   "lodi_r2",
+   "monteleg",
+   "swamp1",
+   "swamp4",
+   "aic_c",
+   "aic_e",
+   "massena",
+   "rep_refuse"
   ],
   "6": [
    "swamp2",
@@ -148,7 +198,20 @@
    "horse_mtn",
    "aic_b",
    "arcole_r",
-   "swamp1"
+   "swamp1",
+   "aic_f",
+   "augereau_r",
+   "augereau_flag",
+   "alex_heroes",
+   "medal",
+   "lodi_r",
+   "lodi_r2",
+   "serurier",
+   "hus_aus",
+   "aic_a",
+   "aic_c",
+   "aic_e",
+   "massena"
   ],
   "7": [
    "bassano_dead",
@@ -166,7 +229,19 @@
    "hospital",
    "serurier",
    "swamp1",
-   "swamp4"
+   "swamp4",
+   "aic_f",
+   "augereau_r",
+   "augereau_flag",
+   "alex_heroes",
+   "mantua_view",
+   "medal",
+   "lodi_r",
+   "swamp2",
+   "horse_mtn",
+   "aic_b",
+   "aic_e",
+   "rep_refuse"
   ],
   "8": [
    "trumpet3",
@@ -186,7 +261,20 @@
    "aic_1",
    "monteleg",
    "montenotte",
-   "serurier"
+   "serurier",
+   "aic_f",
+   "augereau_r",
+   "augereau_flag",
+   "alex_heroes",
+   "mantua_view",
+   "medal",
+   "swamp2",
+   "swamp4",
+   "wounded",
+   "hospital",
+   "aic_b",
+   "aic_e",
+   "rep_refuse"
   ],
   "9": [
    "aic_1",
@@ -203,7 +291,24 @@
    "horse_mtn",
    "serurier",
    "montenotte",
-   "aic_b"
+   "aic_b",
+   "aic_f",
+   "augereau_r",
+   "augereau_flag",
+   "alex_heroes",
+   "lodi_r",
+   "lodi_r2",
+   "monteleg",
+   "swamp1",
+   "swamp2",
+   "swamp4",
+   "hus_aus",
+   "bassano_dead",
+   "vernet_det",
+   "aic_c",
+   "massena",
+   "rep_refuse",
+   "arcole_r"
   ]
  },
  "same_artwork": [
