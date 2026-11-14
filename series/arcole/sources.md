@@ -1,0 +1,2 @@
+- https://en.wikipedia.org/wiki/Battle_of_Arcole - troop numbers, Ronco crossing, dikes, flag on the dike, Muiron's death, the 25 Guides with trumpets, casualties
+- https://en.wikipedia.org/wiki/Jean-Baptiste_Muiron - met Bonaparte at Toulon 1793, account of shielding him, frigate named after him
