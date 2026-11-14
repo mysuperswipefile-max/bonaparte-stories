@@ -1,3 +1,12 @@
+import os, certifi
+# Trust the cloud environment's proxy certificate (keeps TLS verification on)
+_CCR="/root/.ccr/ca-bundle.crt"
+if os.path.exists(_CCR):
+    _comb="/tmp/certifi_plus_ccr.pem"
+    if not os.path.exists(_comb):
+        open(_comb,"w").write(open(certifi.where()).read()+"\n"+open(_CCR).read())
+    certifi.where=lambda: _comb
+    os.environ.setdefault("SSL_CERT_FILE",_comb)
 import asyncio,edge_tts,json,subprocess
 import os
 VOICE=os.environ.get("VOICE","en-US-ChristopherNeural"); RATE=os.environ.get("RATE","+4%"); GAP=0.18

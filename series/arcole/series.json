@@ -18,7 +18,7 @@
   "1": [
    [
     "aic_1:.45,.12,.45,.18,1.6,1.3",
-    "arcole_nap:.5,.15,.5,.2,1.0,1.2"
+    "aic_e:.5,.2,.5,.15,1.0,1.25"
    ],
    [
     "monteleg",
@@ -105,7 +105,6 @@
    "lodi_r",
    "aic_d",
    "augereau_flag",
-   "arcole_nap",
    "hus_aus",
    "wounded",
    "aic_c",
@@ -117,7 +116,6 @@
    "montenotte"
   ],
   "5": [
-   "arcole_nap",
    "aic_b",
    "aic_1",
    "wounded",
@@ -194,7 +192,6 @@
    "aic_1",
    "wounded",
    "hospital",
-   "arcole_nap",
    "medal",
    "aic_a",
    "map:m3_italy",
@@ -208,5 +205,11 @@
    "montenotte",
    "aic_b"
   ]
- }
+ },
+ "same_artwork": [
+  [
+   "aic_1",
+   "arcole_nap"
+  ]
+ ]
 }
