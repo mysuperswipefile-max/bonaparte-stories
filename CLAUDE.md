@@ -1,7 +1,7 @@
 # Bonaparte Stories: daily run
 
 This repo makes and publishes one short history video per day on TikTok and YouTube Shorts,
-for the account "Bonaparte Stories". Read STYLE.md before writing any script.
+for the account "Bonaparte Stories". Read STYLE.md and INSIGHTS.md before writing any script or planning images. INSIGHTS.md is updated every week by a separate research task.
 
 ## Each daily run
 0. The repo is attached to the scheduled task and is already in the session. If it is not cloned yet, clone it with plain `git clone https://github.com/mysuperswipefile-max/bonaparte-stories`. Do not use add_repo.
