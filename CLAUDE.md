@@ -5,9 +5,10 @@ for the account "Bonaparte Stories". Read STYLE.md and INSIGHTS.md before writin
 
 ## Each daily run
 0. The repo is attached to the scheduled task and is already in the session. If it is not cloned yet, clone it with plain `git clone https://github.com/mysuperswipefile-max/bonaparte-stories`. Do not use add_repo.
-1. `python -m pip install --break-system-packages -q edge-tts shapely matplotlib numpy scipy pillow` (ffmpeg is required). Use `python -m pip`, not bare `pip` (it may target another Python). If PIL fails with `cannot import name '_imaging'`, run `python -m pip install --break-system-packages --ignore-installed --target /usr/local/lib/python3.11/dist-packages -q pillow`.
+1. `python -m pip install --break-system-packages -q edge-tts kokoro-onnx soundfile shapely matplotlib numpy scipy pillow` (ffmpeg is required). Use `python -m pip`, not bare `pip` (it may target another Python). If PIL fails with `cannot import name '_imaging'`, run `python -m pip install --break-system-packages --ignore-installed --target /usr/local/lib/python3.11/dist-packages -q pillow`.
 2. `git fetch origin` and check every `claude/*` branch for commits not on `origin/main` (e.g. a previous run's "Post ... part N" state update); merge them first so a part is never posted twice. Then read `state.json`: `current_series` and `next_part`.
 3. If `series/<series>/part<N>.txt` does not exist, the series is finished: go to "New series" below, then continue with part 1 of the new series.
+3b. Voice: the pipeline uses the Kokoro voice `bm_george` (natural, local, free; model files download automatically on first use). If Kokoro fails it falls back to the old edge voice: say so in your summary.
 4. Render: `python pipeline/render_part.py <series> <N>` -> `docs/videos/<series>_p<N>.mp4`.
    - If the image pool is exhausted, find more public-domain images (`pipeline/rijks.py`, `pipeline/autocrop.py`), add them to `assets/images/` and to the pool in `series.json`, and re-render.
    - Prefer an explicit per-sentence plan in `series.json` -> `plans` so each image matches what is being said.
