@@ -1,7 +1,8 @@
 import numpy as np, scipy.signal as sg, scipy.io.wavfile as wf, sys
-SR=48000; DUR=float(sys.argv[1]); BPM=124; beat=60/BPM; s16=beat/4
+SR=48000; DUR=float(sys.argv[1]); SEED=int(sys.argv[2]) if len(sys.argv)>2 else 7
+BPM=[96,104,112,120,128,136][SEED%6]; TR=[0,-2,3,-5,5,-3][(SEED//6)%6]; beat=60/BPM; s16=beat/4
 N=int(SR*DUR); out=np.zeros((N,2))
-rng=np.random.default_rng(7)
+rng=np.random.default_rng(SEED)
 def add(sig,t,pan=0.0,g=1.0):
     i=int(t*SR); 
     if i>=N: return
@@ -33,8 +34,13 @@ def pad(freq,dur):
     env=np.minimum(1,t/0.4)*np.minimum(1,(dur-t)/0.4); return x*env
 nt=lambda m:440*2**((m-69)/12)
 # progression per bar (4 beats): Dm, Bb, F, A  -> roots midi
-prog=[(50,[50,53,57]),(46,[46,50,53]),(41,[45,48,53]),(45,[45,49,52])]
-arp=[0,0,1,0,2,0,1,0,0,0,1,0,2,1,0,2]
+PROGS=[[(50,[50,53,57]),(46,[46,50,53]),(41,[45,48,53]),(45,[45,49,52])],
+ [(45,[45,48,52]),(41,[41,45,48]),(43,[43,47,50]),(40,[40,44,47])],
+ [(50,[50,53,57]),(48,[48,52,55]),(46,[46,50,53]),(45,[45,49,52])],
+ [(52,[52,55,59]),(48,[48,52,55]),(43,[43,47,50]),(47,[47,51,54])]]
+prog=[(r+TR,[c+TR for c in ch]) for r,ch in PROGS[SEED%4]]
+ARPS=[[0,0,1,0,2,0,1,0,0,0,1,0,2,1,0,2],[0,1,2,1,0,1,2,1,0,1,2,1,0,2,1,2],[0,2,1,2,0,2,1,2,0,2,1,2,0,1,2,0],[0,0,0,1,2,2,1,0,0,0,0,1,2,1,2,1]]
+arp=ARPS[(SEED//4)%4]
 bar=4*beat; nb=int(DUR/bar)+1
 K,T,S,H=kick(),taiko(),snare(),hat()
 for b in range(nb):

@@ -36,13 +36,15 @@ def main(series, part):
     rate = 4
     while True:
         env = dict(os.environ, RATE=f"{rate:+d}%")
+        if cfg.get("voice"): env.setdefault("KOKORO_VOICE", cfg["voice"])
         run([sys.executable, os.path.join(ROOT, "pipeline/tts.py"), script], env=env)
         t = json.load(open("timing.json"))
         total = t["sents"][-1][1]
         if total + 0.8 >= MIN_LEN or rate <= -10: break
         rate -= 4   # too short: slow the voice a little and retry
     sents = t["sents"]
-    run([sys.executable, os.path.join(ROOT, "pipeline/music.py"), str(total + 0.8)])
+    seed = sum(ord(c) for c in series) * 7 + int(part) * 13
+    run([sys.executable, os.path.join(ROOT, "pipeline/music.py"), str(total + 0.8), str(seed)])
     plans = cfg.get("plans", {})
     if str(part) in plans:
         plan = [[img_path(s) for s in sent] for sent in plans[str(part)]]

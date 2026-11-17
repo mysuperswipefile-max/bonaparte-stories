@@ -3,23 +3,23 @@ from PIL import Image,ImageDraw,ImageFont,ImageFilter
 W,H,FPS,XF=1080,1920,30,0.45
 def run(c): subprocess.run(c,check=True)
 def title_png(path,part,color,title="WHEN NAPOLEON ALMOST LOST"):
-    im=Image.new("RGBA",(W,H),(0,0,0,0)); d=ImageDraw.Draw(im)
+    """Small series label at the top of the frame, so the image stays fully visible."""
+    im=Image.new("RGBA",(W,H),(0,0,0,0))
     fb="/usr/share/fonts/opentype/inter/InterDisplay-Black.otf"
-    f1=ImageFont.truetype(fb,118); f2=ImageFont.truetype(fb,84)
-    words=title.split(); half=(len(words)+1)//2
-    lines=[" ".join(words[:half])," ".join(words[half:])] if len(title)>14 else [title]; y=560
-    sh=Image.new("RGBA",(W,H),(0,0,0,0)); sd=ImageDraw.Draw(sh)
-    for i,l in enumerate(lines):
-        w=d.textlength(l,font=f1); x=(W-w)/2; yy=y+i*132
-        sd.text((x,yy+8),l,font=f1,fill=(0,0,0,230))
-    sh=sh.filter(ImageFilter.GaussianBlur(14)); im=Image.alpha_composite(im,sh); d=ImageDraw.Draw(im)
-    for i,l in enumerate(lines):
-        w=d.textlength(l,font=f1); d.text(((W-w)/2,y+i*132),l,font=f1,fill="white")
-    t=f"PART {part}"; tw=d.textlength(t,font=f2); pw,ph=tw+90,124; px=(W-pw)/2; py=y+2*132+34
-    sh2=Image.new("RGBA",(W,H),(0,0,0,0)); ImageDraw.Draw(sh2).rounded_rectangle((px,py+10,px+pw,py+ph+10),radius=ph/2,fill=(0,0,0,170))
-    im=Image.alpha_composite(im,sh2.filter(ImageFilter.GaussianBlur(12))); d=ImageDraw.Draw(im)
-    d.rounded_rectangle((px,py,px+pw,py+ph),radius=ph/2,fill=color)
-    d.text((W/2,py+ph/2+2),t,font=f2,fill="white",anchor="mm")
+    f1=ImageFont.truetype(fb,52); f2=ImageFont.truetype(fb,46)
+    d=ImageDraw.Draw(im)
+    t=f"PART {part}"; tw=d.textlength(t,font=f2); pw,ph=tw+56,76
+    lw=d.textlength(title,font=f1)
+    total=pw+24+lw; x0=(W-total)/2; y=170
+    if total>W-80:  # long title: badge on its own line
+        x0=(W-pw)/2; lx=(W-lw)/2; ly=y+ph+18
+    else:
+        lx=x0+pw+24; ly=y+(ph-62)/2
+    band=Image.new("RGBA",(W,H),(0,0,0,0)); ImageDraw.Draw(band).rectangle((0,y-40,W,max(ly+62,y+ph)+40),fill=(0,0,0,120))
+    im=Image.alpha_composite(im,band.filter(ImageFilter.GaussianBlur(18))); d=ImageDraw.Draw(im)
+    d.rounded_rectangle((x0,y,x0+pw,y+ph),radius=ph/2,fill=color)
+    d.text((x0+pw/2,y+ph/2+2),t,font=f2,fill="white",anchor="mm")
+    d.text((lx+2,ly+3),title,font=f1,fill=(0,0,0,200)); d.text((lx,ly),title,font=f1,fill="white")
     im.save(path)
 def build(part,color,plan,out,T0=3.4,TT=3.6,title="WHEN NAPOLEON ALMOST LOST"):
     tm=json.load(open("timing.json")); words=tm["words"]; sents=tm["sents"]; END=sents[-1][1]+0.7
