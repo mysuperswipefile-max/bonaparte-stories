@@ -50,13 +50,21 @@ def main(series, part):
         plan = [[img_path(s) for s in sent] for sent in plans[str(part)]]
     else:
         pool = list(cfg["pools"][str(part)])
+        # never show two files of the same artwork in one video (series.json -> same_artwork)
+        groups = {}
+        for g in cfg.get("same_artwork", []):
+            for x in g: groups.setdefault(x, set()).update(g)
+        used = set()
         plan = []
         for (a, b, _) in sents:
             n = max(1, math.ceil((b - a) / MAX_SHOT))
             shots = []
             for _ in range(n):
+                while pool and (pool[0].split(":")[1] if pool[0].startswith("map:") else pool[0].split(":")[0]) in used: pool.pop(0)
                 if not pool: raise SystemExit("image pool exhausted for part %s: add images" % part)
-                shots.append(img_path(pool.pop(0)))
+                spec = pool.pop(0); key = spec.split(":")[1] if spec.startswith("map:") else spec.split(":")[0]
+                used |= groups.get(key, set()) | {key}
+                shots.append(img_path(spec))
             plan.append(shots)
     color = cfg["colors"][(int(part) - 1) % len(cfg["colors"])]
     out = os.path.join(work, "final.mp4")
