@@ -1,6 +1,6 @@
 {
   "current_series": "arcole",
-  "next_part": 7,
+  "next_part": 8,
   "posted": [
     {
       "date": "2026-11-14",
@@ -54,6 +54,15 @@
       "buffer_posts": {
         "youtube": "6afed524ec3834f154536726",
         "tiktok": "6afed525ec3834f15453678d"
+      }
+    },
+    {
+      "date": "2026-11-20",
+      "series": "arcole",
+      "part": 7,
+      "buffer_posts": {
+        "youtube": "6b0025db3d025b9e58a4a91d",
+        "tiktok": "6b0025dc39116a845dcd6e8e"
       }
     }
   ],
