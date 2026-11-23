@@ -23,7 +23,7 @@ save(fig,"w1_elba")
 # coalition arrows on top
 arrow(ax,[(13.0,51.6),(7.0,50.4)],AL,lw=7); arrow(ax,[(16.0,48.0),(8.5,48.3)],AL,lw=7)
 arrow(ax,[(23.0,53.8),(15.0,52.8)],AL,lw=6); arrow(ax,[(-0.5,52.0),(3.6,50.9)],AL,lw=6)
-badge(ax,9.5,55.3,"1 vs ALL OF EUROPE",AL,16)
+badge(ax,5.0,41.3,"1 vs ALL\nOF EUROPE",AL,17)
 save(fig,"w2_coalition"); plt.close(fig)
 # ---- Belgium, 15-18 June
 ext=(3.7,5.4,50.15,51.0); fig,ax=base(ext,LAND10,RIV10,LAK10)
