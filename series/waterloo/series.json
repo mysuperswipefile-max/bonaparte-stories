@@ -94,6 +94,52 @@
    [
     "w_guard_grenadier"
    ]
+  ],
+  "4": [
+   [
+    "w_steuben_waterloo"
+   ],
+   [
+    "map:w5_field"
+   ],
+   [
+    "w_soult"
+   ],
+   [
+    "w_david_nap",
+    "w_well_goya"
+   ],
+   [
+    "w_nap_brood"
+   ],
+   [
+    "w_mont_st_jean"
+   ],
+   [
+    "w_hougo_ruin"
+   ],
+   [
+    "w_hougo_fight2"
+   ],
+   [
+    "w_hougo_fight"
+   ],
+   [
+    "w_hougo_gates"
+   ],
+   [
+    "w_hougo_ruins"
+   ],
+   [
+    "map:w6_prussians",
+    "w_blucher_rochling"
+   ],
+   [
+    "w_well_hillingford"
+   ],
+   [
+    "w_andrieux"
+   ]
   ]
  },
  "pools": {
