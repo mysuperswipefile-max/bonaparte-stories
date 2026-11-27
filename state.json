@@ -1,6 +1,6 @@
 {
   "current_series": "waterloo",
-  "next_part": 5,
+  "next_part": 6,
   "posted": [
     {
       "date": "2026-11-14",
@@ -117,6 +117,15 @@
       "buffer_posts": {
         "youtube": "6b080f41a35d913b496fe4e0",
         "tiktok": "6b080f41b56cc066e5be78f9"
+      }
+    },
+    {
+      "date": "2026-11-27",
+      "series": "waterloo",
+      "part": 5,
+      "buffer_posts": {
+        "youtube": "6b0960a9049983dcfbafa50e",
+        "tiktok": "6b0960a9776ce212760bf3b1"
       }
     }
   ],
