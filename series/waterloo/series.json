@@ -189,6 +189,55 @@
    [
     "w_ney_charge"
    ]
+  ],
+  "6": [
+   [
+    "w_squares_phil"
+   ],
+   [
+    "map:w6_prussians"
+   ],
+   [
+    "w_ney"
+   ],
+   [
+    "w_guard_cav",
+    "w_hussars"
+   ],
+   [
+    "w_nap_charge"
+   ],
+   [
+    "w_steuben_waterloo"
+   ],
+   [
+    "w_horse_grenadiers"
+   ],
+   [
+    "w_cuir_horse"
+   ],
+   [
+    "w_motte_squares",
+    "w_well_lawrence"
+   ],
+   [
+    "w_artillery",
+    "w_sadler"
+   ],
+   [
+    "w_charge_eng",
+    "w_red_lancers"
+   ],
+   [
+    "w_ney_charge"
+   ],
+   [
+    "w_blucher_forward",
+    "w_plancenoit_northen"
+   ],
+   [
+    "w_pieneman_wiki"
+   ]
   ]
  },
  "pools": {
